@@ -694,11 +694,14 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             let lastHighlighted = self.lastHighlighted
             
             var dis = 100
-            if((lastHighlighted) != nil){
+            var offDis = 10
+            if((lastHighlighted) != nil && h != nil){
+                let xr = self.visibleXRange
+                offDis = Int(xr/10.0);
                 dis = Int(abs((h!.x) - (lastHighlighted!.x)));
             }
             
-            if (!self.hasNoDragOffset || (!self.isFullyZoomedOut&&dis>10))
+            if (!self.hasNoDragOffset || (!self.isFullyZoomedOut&&dis>offDis))
             {
                 _isDragging = true
                 
