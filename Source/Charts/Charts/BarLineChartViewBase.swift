@@ -693,7 +693,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             
             let lastHighlighted = self.lastHighlighted
             
-            var dis = 100
+            var dis = 10
             var offDis = 10
             if((lastHighlighted) != nil && h != nil){
                 let xr = self.visibleXRange
